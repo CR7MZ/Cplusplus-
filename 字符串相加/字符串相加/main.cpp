@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #include<string>
+//如果两个数太大，可以用字符串类型的数字来计算
 class solution
 {
 public:
@@ -13,12 +14,12 @@ public:
 			num1.swap(num2);
 			swap(Lsize, Rsize);
 		}
-		//定义一个字符串，并且把它的长度变为最长的字符串加1，且都初始化为0字符来保存结果。
+		//用string类的构造函数，并且把它的长度变为最长的字符串加1，且都初始化为0字符，用来保存结果。
 		string strRet(Lsize + 1, '0');
 		char offset = 0;//进位
 		for (int L = num1.size() - 1, R = num2.size()-1; L >= 0; L--, R--)
 		{
-			char cRet = num1[L] - '0';//从个位开始两个数相加。
+			char cRet = num1[L] - '0';//从个位开始两个数相加。字符'9'减去字符'0'变为数字9。
 			if (R >= 0)
 			{
 				cRet += num2[R]-'0';
