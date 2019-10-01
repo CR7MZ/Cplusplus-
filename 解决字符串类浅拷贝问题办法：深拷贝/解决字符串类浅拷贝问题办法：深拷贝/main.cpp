@@ -48,9 +48,47 @@ void Test1()
 	string s2(s1);
 	string s3 = s1;
 }
+
+
+namespace bite2
+{
+	class string//Éî¿½±´¡ª¡ª¼ò½à°æ
+	{
+	public:
+		string(char* str = "")
+		{
+			if (str == nullptr)
+				str = "";
+			_str = new char[strlen(str) + 1];
+			strcpy(_str, str);
+		}
+		string(const string& s)
+			:_str(nullptr)
+		{
+			string TempStr(s._str);
+			swap(_str, TempStr._str);
+		}
+		string& operator=( string s)
+		{
+			swap(_str, s._str);
+			return  *this;
+		}
+	private:
+		char* _str;
+	};
+}
+void test2()
+{
+	string s1("hello");
+	string s2(s1);
+	string s3;
+	s3 = s2;
+	cout << s1 << " " << s2 << " " << s3 << endl;
+}
 int main()
 {
-	Test1();
+	//Test1();
+	test2();
 	system("pause");
 	return 0;
 }
