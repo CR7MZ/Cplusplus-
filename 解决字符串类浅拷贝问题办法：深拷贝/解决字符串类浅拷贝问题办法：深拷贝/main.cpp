@@ -44,9 +44,9 @@ namespace bite
 }
 void Test1()
 {
-	string s1("hello");
-	string s2(s1);
-	string s3 = s1;
+	bite::string s1("hello");
+	bite::string s2(s1);
+	bite::string s3 = s1;
 }
 
 
@@ -79,11 +79,10 @@ namespace bite2
 }
 void test2()
 {
-	string s1("hello");
-	string s2(s1);
-	string s3;
+	bite2::string s1("hello");
+	bite2::string s2(s1);
+	bite2::string s3;
 	s3 = s2;
-	cout << s1 << " " << s2 << " " << s3 << endl;
 }
 int main()
 {
