@@ -1,4 +1,4 @@
-#include<iostream>
+#include<iostream> 
 using namespace std;
 #include<string>
 class solution
@@ -28,5 +28,6 @@ int main()
 	s1.reverseString(s);
 	cout << s1.reverseString(s) << endl;
 	system("pause");
+
 	return 0;
 }
