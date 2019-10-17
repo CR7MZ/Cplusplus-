@@ -68,12 +68,63 @@ namespace bite
 		}
 		Node* _cur;
 	};
+	template<class Iterator,class T>
+	struct list_reverse_iterator
+	{
+		typedef list_reverse_iterator<Iterator,T> self;
+	public:
+		list_reverse_iterator(Iterator it)
+			:_it(it)
+		{}
+		T& operator*()
+		{
+			Iterator tmp = _it;
+			--tmp;;
+			return *tmp;
+		}
+		T* operator->()
+		{
+			return &(operator*());
+		}
+		self& operator++()//反向迭代器的加加为正向迭代器的减减
+		{
+			--_it;
+			return	*this;
+		}
+		self operator++(int)
+		{
+			self tmp (*this);
+			--tmp;
+			return tmp;
+		}
+		self& operator--()//反向迭代器的减减为正向迭代器的加加
+		{
+			_it++;
+			return *this;
+		}
+		self operator--(int)
+		{
+			self tmp(*this);
+			tmp++;
+			return tmp;
+		}
+		bool operator!=(const self& s)
+		{
+			return _it != s._it;
+		}
+		bool operator==(const self& s)
+		{
+			return _it == s._it;
+		}
+		Iterator _it;
+	};
 	template<class T>
 	class list
 	{
 		typedef ListNode<T> Node;
 	public:
 		typedef list_iterator<T> iterator;
+		typedef list_reverse_iterator<iterator, T> reverse_iterator;
 	public:
 		list()
 		{
@@ -132,6 +183,14 @@ namespace bite
 		iterator end()
 		{
 			return iterator(_head);
+		}
+		reverse_iterator rbegin()
+		{
+			return end();
+		}
+		reverse_iterator rend()
+		{
+			return begin();
 		}
 		size_t size()const
 		{
@@ -244,18 +303,32 @@ namespace bite
 	};
 }
 #include<vector>
+void test()
+{
+	bite::list<int> L3;
+	L3.push_back(1);
+	L3.push_back(2);
+	L3.push_back(3);
+	L3.push_back(4);
+	auto rit = L3.rbegin();
+	while (rit != L3.rend())
+	{
+		cout << *rit << " ";
+		++rit;
+	}
+}
 int main()
 {
-	bite::list<int> L;
+	/*bite::list<int> L;
 	L.push_back(1);
 	L.push_back(2);
 	L.push_back(3);
-	L.push_back(4);
-	cout << L.back() << endl;
-	cout << L.front() << endl;
-	cout << L.size() << endl;
+	L.push_back(4);*/
+	//cout << L.back() << endl;
+	//cout << L.front() << endl;
+	//cout << L.size() << endl;
 
-	bite::list<int> L2(L);
+	//bite::list<int> L2(L);
 	/*bite::list<int> L3;
 	L3 = L;
 	vector<int> v = { 1, 2, 3, 4,5 };
@@ -263,17 +336,11 @@ int main()
 	for (auto e : L4)
 		cout << e << " ";
 	cout << endl;*/
-	L2.pop_back();
+	/*L2.pop_back();
 	L2.erase(L2.begin());
 	L2.resize(1);
-	L2.resize(3);
-	auto it = L2.begin();
-	while (it != L2.end())
-	{
-		cout << *it << " ";
-		it++;
-	}
-
+	L2.resize(3);*/
+	test();
 	system("pause");
 	return 0;
 }
