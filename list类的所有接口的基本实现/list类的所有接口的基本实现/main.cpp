@@ -94,7 +94,7 @@ namespace bite
 		self operator++(int)
 		{
 			self tmp (*this);
-			--tmp;
+			_it--;
 			return tmp;
 		}
 		self& operator--()//反向迭代器的减减为正向迭代器的加加
@@ -105,7 +105,7 @@ namespace bite
 		self operator--(int)
 		{
 			self tmp(*this);
-			tmp++;
+			_it++;
 			return tmp;
 		}
 		bool operator!=(const self& s)
