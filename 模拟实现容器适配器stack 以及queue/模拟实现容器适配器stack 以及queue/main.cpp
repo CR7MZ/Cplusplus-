@@ -102,11 +102,11 @@ void teststack()
 		cout <<"yes" << endl;
 	else
 		cout << "no" << endl;
-	cout << s.size() << endl;
-	cout << s.top() << endl;
-	s.top() = 4;
-	cout << s.size() << endl;
-	cout << s.top() << endl;
+	//cout << s.size() << endl;
+	//cout << s.top() << endl;
+	//s.top() = 4;
+	//cout << s.size() << endl;
+	//cout << s.top() << endl;
 	cout << "以下为s2" << endl;
 	bite::stack<int, vector<int>> s2;//stack的底层用vector也是可以的。
 	s2.push(1);
@@ -122,8 +122,8 @@ void teststack()
 		cout << "yes" << endl;
 	else
 		cout << "no" << endl;
-	s2.clear();
-	cout << s2.size() << endl;
+	//s2.clear();
+	//cout << s2.size() << endl;
 }
 #include<list>
 void testqueue()
@@ -141,10 +141,10 @@ void testqueue()
 	cout << q.front() << endl;
 	cout << q.back() << endl;
 	cout << "以下为q2" << endl;
-	if (q.empty())
+	/*if (q.empty())
 		cout << "yes" << endl;
 	else
-		cout << "no" << endl;
+		cout << "no" << endl;*/
 	bite::queue<int, list<int>>  q2;//queue的底层也可以用list实现
 	q2.push(5);
 	q2.push(2);
