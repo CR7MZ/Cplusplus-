@@ -28,6 +28,5 @@ int main()
 	s1.reverseString(s);
 	cout << s1.reverseString(s) << endl;
 	system("pause");
-
 	return 0;
 }
