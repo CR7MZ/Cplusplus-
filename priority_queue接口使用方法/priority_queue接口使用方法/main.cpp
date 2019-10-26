@@ -11,6 +11,7 @@ public:
 		, _month(month)
 		, _day(day)
 		{}
+
 	bool operator<(const Date& d)const 
 	{
 		return this->_day < d._day;
