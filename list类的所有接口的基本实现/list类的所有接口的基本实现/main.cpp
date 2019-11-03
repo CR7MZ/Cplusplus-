@@ -317,6 +317,7 @@ void test()
 		++rit;
 	}
 }
+
 int main()
 {
 	/*bite::list<int> L;
