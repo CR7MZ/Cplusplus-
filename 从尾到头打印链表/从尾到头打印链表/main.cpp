@@ -9,6 +9,7 @@ struct ListNode
 	ListNode* next;
 	ListNode(int x) :val(x), next(nullptr){}
 };
+
 //将链表中的元素，依次压入栈中，在之后再依次出栈到数组中，则实现反向打印链表。
 class solution1
 {
