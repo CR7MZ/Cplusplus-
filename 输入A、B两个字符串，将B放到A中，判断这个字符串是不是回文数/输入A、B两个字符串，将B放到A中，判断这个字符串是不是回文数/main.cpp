@@ -2,6 +2,13 @@
 #include<string>
 #include<algorithm>
 using namespace std;
+//例如：
+//A = "abc"; B = "b";
+//这里有四种把B插入A的方法：
+//在a之前：不是回文数
+//在a之后：是回文数
+//在b之后：是回文数
+//在第二个b之后：不是回文数
 int main()
 {
 	string A;
