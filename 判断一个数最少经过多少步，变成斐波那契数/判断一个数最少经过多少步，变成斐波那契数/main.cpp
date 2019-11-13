@@ -25,7 +25,7 @@ int main()
 			cout << "0" << endl;
 			break;
 		}
-		if (Fib(i) < N&&Fib(i+1) > N)
+		if (Fib(i) < N&&Fib(i + 1) > N)
 		{
 			if (N - Fib(i) < Fib(i + 1) - N)
 			{
