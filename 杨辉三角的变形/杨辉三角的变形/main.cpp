@@ -2,8 +2,6 @@
 using namespace std;
 #include<vector>
 //https://www.nowcoder.com/questionTerminal/8ef655edf42d4e08b44be4d777edbf43
-
-
 void Func()
 {
 	int n = 0;
