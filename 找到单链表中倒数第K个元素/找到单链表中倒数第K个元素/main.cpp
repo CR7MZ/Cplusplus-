@@ -27,14 +27,23 @@ ListNode* Create(const vector<int>& v)
 //最后两个指针同时往下走当快的那个指针为空时，满的指针则为倒数第K个节点
 int Func(ListNode* head, int k)
 {
+	if (head == nullptr)
+		return -1;
 	ListNode* tmpfast = head;
 	ListNode* tmpslow = head;
-	while (k)
+	if (k <= 0)
+		return -1;
+	while (k - 1)//快指针移动时
 	{
-		tmpfast = tmpfast->m_pNext;
-		k--;
+		if (tmpfast != nullptr)
+		{
+			tmpfast = tmpfast->m_pNext;
+			k--;
+		}
+		if (tmpfast == nullptr)//快指针不能移到链表外部，所以必须加对快指针的判空操作
+			return -1;
 	}
-	while (tmpfast != nullptr)
+	while (tmpfast->m_pNext != nullptr)
 	{
 		tmpfast = tmpfast->m_pNext;
 		tmpslow = tmpslow->m_pNext;
