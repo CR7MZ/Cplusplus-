@@ -2,6 +2,7 @@
 using namespace std;
 #include<vector>
 //https://www.nowcoder.com/questionTerminal/fe298c55694f4ed39e256170ff2c205f
+
 void Func()
 {
 	vector<int> v(10);
