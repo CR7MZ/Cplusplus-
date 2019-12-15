@@ -2,8 +2,6 @@
 using namespace std;
 #include<string>
 //https://www.nowcoder.com/questionTerminal/98dc82c094e043ccb7e0570e5342dd1b
-
-
 void Func()
 {
 	string s1;
