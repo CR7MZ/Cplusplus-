@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 //Ä£Äâ¶ş²æËÑË÷Ê÷
 template<class T>
 struct BStreenode
