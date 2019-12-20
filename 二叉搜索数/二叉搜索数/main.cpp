@@ -45,9 +45,10 @@ public:
 
 		cur = new node(data);
 		if (data < father->_data)
-			cur = father->left;
-		else if (data>father->_data)
-			cur = cur->right;
+			father->left = cur;
+		else
+		    father->right = cur;
+		
 		return true;
 	}
 
@@ -121,6 +122,46 @@ public:
 		delete denode;
 		return true;
 	}
+
+	node* find(const T&data)
+	{
+		node* cur = _root;
+		while (cur)
+		{
+			if (data == cur->_data)
+				return cur;
+			else if (data < cur->_data)
+				cur = cur->left;
+			else
+				cur = cur->right;
+		}
+		return nullptr;
+	}
+
+	void Inorder()
+	{
+		_Inorder(_root);
+	}
+private:
+	void _Inorder(node* _root)
+	{
+		if (_root)
+		{
+			_Inorder(_root->left);
+			cout << _root->_data<<" ";
+			_Inorder(_root->right);
+		}
+	}
 private:
 	node* _root;
 };
+int main()
+{
+	BStree<int> b;
+	int a[] = { 5, 3, 4, 1, 7, 8, 2, 6, 0, 9 };;
+	for (auto e : a)
+		b.insert(e);
+	b.Inorder();
+	system("pause");
+	return 0;
+}
