@@ -31,7 +31,6 @@ void replaceSpace(char *str, int length) {//方法1
 	auto ret = result.c_str();//因为传的参数是char*所以，要将string类型的字符串转为C类型。
 	strcpy(str, ret);
 }
-
 void changestring(string& s)//方法2
 {
 	int count = 0;
