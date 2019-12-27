@@ -48,6 +48,7 @@ public:
 					s.pop();//反之，出栈
 			}
 		}
+
 		if (s.empty())//如果将字符串遍历完后，栈为空，说明全部匹配。
 			return true;
 		else
