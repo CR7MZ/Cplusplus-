@@ -1,8 +1,6 @@
 #include<iostream>
 using namespace std;
 //https://www.nowcoder.com/questionTerminal/7299c12e6abb437c87ad3e712383ff84
-
-
 int check(int n)//判断是否为完全数
 {
 	int result = 0;
