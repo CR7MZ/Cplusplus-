@@ -1,7 +1,7 @@
+//题目：https://www.nowcoder.com/questionTerminal/459bd355da1549fa8a49e350bf3df484?f=discussion
 #include<iostream>
 #include<vector>
 using namespace std;
-//例如【 - 1，2，1】连续的最大子数组为【2，1】，和为3；
 
 //遇到这一个题，我们首先可以这样考虑，设置一个sum和result，sum是用来每次加新的元素，
 //result是最后得出最大的子数组和。我们可以每次给sum中添加新的元素，从第一个开始向后，
@@ -26,7 +26,9 @@ int main()
 	for (int i = 0; i<v.size(); i++)
 	{
 		sum += v[i];
-		if (sum>max)//此语句一定要在sum<0语句前，否则会出现数组中全是负数的报错
+		if (sum>max)//此语句一定要在sum<0语句前，否则会出现数组中全是负数的报错。
+			//{-5，-1，-6，-9，-3}
+			//如果是全负数的数组，此语句放在sum<0的前面，就会造成最终输出为0，因为一直在执行sum<0语句的内容。输出就不是负数中最大的了。
 		{
 			max = sum;
 		}
