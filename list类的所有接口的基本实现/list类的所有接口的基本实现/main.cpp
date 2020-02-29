@@ -175,6 +175,7 @@ namespace bite
 			clear();
 			delete _head;
 		}
+
 	public:
 		iterator begin()
 		{
