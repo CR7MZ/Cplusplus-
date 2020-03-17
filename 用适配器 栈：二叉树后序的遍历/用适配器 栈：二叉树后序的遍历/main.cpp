@@ -19,7 +19,7 @@ public:
 		stack<TreeNode*> s;
 		TreeNode* cur = root;
 		TreeNode* pre = nullptr;//pre是用来判断有节点是否被访问过
-		while (cur || s.empty())
+		while (cur || !s.empty())
 		{ 
 			while (cur)
 			{
