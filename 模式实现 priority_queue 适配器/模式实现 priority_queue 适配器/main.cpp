@@ -1,7 +1,8 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-namespace bite
+
+namespace My
 {
 	template<class T,class Container=vector<T>,class compare =less<T>>
 	class priority_queue
@@ -51,7 +52,7 @@ namespace bite
 	private:
 		void AdjustDown(int parent)//堆的向下调整法
 		{
-			int child = (parent * 2) + 1;
+			size_t child = (parent * 2) + 1;
 			while (child < size())
 			{
 				if (child + 1 < size() && com(child, child + 1))
@@ -89,7 +90,7 @@ namespace bite
 void Testpriority_queue()
 {
 	int arr[] = { 8 , 1 , 9 , 3 , 6 , 4 , 5 , 0 };
-	bite::priority_queue<int> Pq(arr,arr+sizeof(arr)/sizeof(arr[0]));
+	My::priority_queue<int> Pq(arr,arr+sizeof(arr)/sizeof(arr[0]));
 	cout << Pq.top() << endl;
 	Pq.pop();
 	cout << Pq.top() << endl;
