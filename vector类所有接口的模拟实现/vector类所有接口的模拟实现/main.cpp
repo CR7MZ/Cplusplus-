@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include<assert.h>
-namespace bite
+namespace My
 {
 	template<class T>
 	class vector
