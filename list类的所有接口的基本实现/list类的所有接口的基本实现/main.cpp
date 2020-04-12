@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 namespace bite
 {
 	//list是带头结点双向循环链表。
