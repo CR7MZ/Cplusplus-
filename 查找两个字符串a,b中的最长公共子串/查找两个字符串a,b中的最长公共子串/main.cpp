@@ -2,7 +2,6 @@
 #include<string>
 using namespace std;
 //https://www.nowcoder.com/questionTerminal/181a1a71c7574266ad07f9739f791506
-
 int main()
 {
 	string a, b;
