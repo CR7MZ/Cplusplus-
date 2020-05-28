@@ -2,8 +2,6 @@
 using namespace std;
 #include<assert.h>
 
-
-
 namespace My
 {
 	template<class T>
